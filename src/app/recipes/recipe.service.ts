@@ -12,7 +12,7 @@ export class RecipeService {
 		new Recipe(
       'A Tast Recipe', 
       'This is simply a test', 
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4vNSX33DN6WXK1GDhrmIbTLrgEg8jbJI3wzgWLBTurMqYnKA6', 
+      'https://www.weightwatchers.co.uk/images/2057/dynamic/foodandrecipes/2013/10/SteakChipsMustardMayo_xl.jpg', 
       [
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20)
@@ -20,7 +20,7 @@ export class RecipeService {
     new Recipe(
       'Another Tast Recipe', 
       'This is simply a test', 
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4vNSX33DN6WXK1GDhrmIbTLrgEg8jbJI3wzgWLBTurMqYnKA6', 
+      'https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x500.jpg', 
       [
         new Ingredient('Buns', 2),
         new Ingredient('Meat', 1)
