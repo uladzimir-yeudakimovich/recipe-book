@@ -1,4 +1,4 @@
-# <a href="https://uladzimir-yeudakimovich.github.io/learn-app/">HttpRequests</a>
+# <a href="https://uladzimir-yeudakimovich.github.io/learn-app/">AppLearn</a>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
