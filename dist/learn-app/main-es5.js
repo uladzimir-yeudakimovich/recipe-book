@@ -64,6 +64,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/signin/signin.component.html":
+  /*!*****************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/auth/signin/signin.component.html ***!
+    \*****************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppAuthSigninSigninComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"row\">\n  <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n    <form (ngSubmit)=\"onSignin(f)\" #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"email\">Mail</label>\n        <input type=\"email\" id=\"email\" name=\"email\" ngModel class=\"form-control\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input\n          type=\"password\" \n          id=\"password\" \n          name=\"password\" \n          ngModel \n          class=\"form-control\"\n          [minlength]=\"6\">\n      </div>\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Sign In</button>\n    </form>\n  </div>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/signup/signup.component.html":
+  /*!*****************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/auth/signup/signup.component.html ***!
+    \*****************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppAuthSignupSignupComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"row\">\n  <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n    <form (ngSubmit)=\"onSignup(f)\" #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"email\">Mail</label>\n        <input type=\"email\" id=\"email\" name=\"email\" ngModel class=\"form-control\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input\n          type=\"password\" \n          id=\"password\" \n          name=\"password\" \n          ngModel \n          class=\"form-control\"\n          [minlength]=\"6\">\n      </div>\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Sign Up</button>\n    </form>\n  </div>\n</div>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/header/header.component.html":
   /*!************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/header/header.component.html ***!
@@ -79,7 +119,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a routerLink=\"/\" class=\"navbar-brand\">Recipe Book</a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li routerLinkActive=\"active\"><a routerLink=\"/recipes\">Recipes</a></li>\n        <li routerLinkActive=\"active\"><a routerLink=\"/shopping-list\">Shopping List</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li class=\"dropdown\" appDropdown>\n          <a style=\"cursor: pointer;\" class=\"dropdown-toggle\" role=\"button\">Manage <span class=\"caret\"></span></a>\n          <ul class=\"dropdown-menu\">\n            <li><a style=\"cursor: pointer;\">Save Data</a></li>\n            <li><a style=\"cursor: pointer;\">Fetch Data</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
+    __webpack_exports__["default"] = "<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a routerLink=\"/\" class=\"navbar-brand\">Recipe Book</a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li routerLinkActive=\"active\"><a routerLink=\"/recipes\">Recipes</a></li>\n        <li routerLinkActive=\"active\"><a routerLink=\"/shopping-list\">Shopping List</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <ng-template [ngIf]=\"!authService.isAuthentificated()\">\n          <li><a routerLink=\"/signup\">Register</a></li>\n          <li><a routerLink=\"/signin\">Login</a></li>\n        </ng-template>\n        <li><a \n            style=\"cursor: pointer;\" \n            (click)=\"onLogout()\" \n            *ngIf=\"authService.isAuthentificated()\">Logout</a></li>\n        <li class=\"dropdown\" appDropdown *ngIf=\"authService.isAuthentificated()\">\n          <a style=\"cursor: pointer;\" class=\"dropdown-toggle\" role=\"button\">Manage <span class=\"caret\"></span></a>\n          <ul class=\"dropdown-menu\">\n            <li><a style=\"cursor: pointer;\" (click)=\"onSaveData()\">Save Data</a></li>\n            <li><a style=\"cursor: pointer;\" (click)=\"onFetchData()\">Fetch Data</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
     /***/
   },
 
@@ -868,6 +908,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ./recipes/recipe-edit/recipe-edit.component */
     "./src/app/recipes/recipe-edit/recipe-edit.component.ts");
+    /* harmony import */
+
+
+    var _auth_signup_signup_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./auth/signup/signup.component */
+    "./src/app/auth/signup/signup.component.ts");
+    /* harmony import */
+
+
+    var _auth_signin_signin_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./auth/signin/signin.component */
+    "./src/app/auth/signin/signin.component.ts");
+    /* harmony import */
+
+
+    var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./auth/auth-guard.service */
+    "./src/app/auth/auth-guard.service.ts");
 
     var appRoutes = [{
       path: '',
@@ -881,17 +939,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         component: _recipes_recipe_start_recipe_start_component__WEBPACK_IMPORTED_MODULE_5__["RecipeStartComponent"]
       }, {
         path: 'new',
-        component: _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_7__["RecipeEditComponent"]
+        component: _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_7__["RecipeEditComponent"],
+        canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]]
       }, {
         path: ':id',
         component: _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_6__["RecipeDetailComponent"]
       }, {
         path: ':id/edit',
-        component: _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_7__["RecipeEditComponent"]
+        component: _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_7__["RecipeEditComponent"],
+        canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]]
       }]
     }, {
       path: 'shopping-list',
       component: _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_4__["ShoppingListComponent"]
+    }, {
+      path: 'signup',
+      component: _auth_signup_signup_component__WEBPACK_IMPORTED_MODULE_8__["SignupComponent"]
+    }, {
+      path: 'signin',
+      component: _auth_signin_signin_component__WEBPACK_IMPORTED_MODULE_9__["SigninComponent"]
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -956,6 +1022,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! firebase */
+    "./node_modules/firebase/dist/index.cjs.js");
+    /* harmony import */
+
+
+    var firebase__WEBPACK_IMPORTED_MODULE_2___default =
+    /*#__PURE__*/
+    __webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_2__);
 
     var AppComponent =
     /*#__PURE__*/
@@ -967,6 +1045,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       _createClass(AppComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          firebase__WEBPACK_IMPORTED_MODULE_2__["initializeApp"]({
+            apiKey: "AIzaSyALw41fzGgRwZtWC0nwSaNPinN96qGVKN8",
+            authDomain: "ng-recipe-book-84c52.firebaseapp.com"
+          });
+        }
+      }, {
         key: "onNavigate",
         value: function onNavigate(feature) {
           this.loadedFeature = feature;
@@ -1121,17 +1207,431 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./recipes/recipe.service */
     "./src/app/recipes/recipe.service.ts");
+    /* harmony import */
+
+
+    var _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    /*! ./shared/data-storage.service */
+    "./src/app/shared/data-storage.service.ts");
+    /* harmony import */
+
+
+    var _auth_signup_signup_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    /*! ./auth/signup/signup.component */
+    "./src/app/auth/signup/signup.component.ts");
+    /* harmony import */
+
+
+    var _auth_signin_signin_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    /*! ./auth/signin/signin.component */
+    "./src/app/auth/signin/signin.component.ts");
+    /* harmony import */
+
+
+    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    /*! ./auth/auth.service */
+    "./src/app/auth/auth.service.ts");
+    /* harmony import */
+
+
+    var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    /*! ./auth/auth-guard.service */
+    "./src/app/auth/auth-guard.service.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_7__["RecipesComponent"], _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_8__["RecipeListComponent"], _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_9__["RecipeDetailComponent"], _recipes_recipe_list_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_10__["RecipeItemComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_11__["ShoppingListComponent"], _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_12__["ShoppingEditComponent"], _shared_dropdown_directive__WEBPACK_IMPORTED_MODULE_13__["DropdownDirective"], _recipes_recipe_start_recipe_start_component__WEBPACK_IMPORTED_MODULE_16__["RecipeStartComponent"], _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_17__["RecipeEditComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_7__["RecipesComponent"], _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_8__["RecipeListComponent"], _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_9__["RecipeDetailComponent"], _recipes_recipe_list_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_10__["RecipeItemComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_11__["ShoppingListComponent"], _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_12__["ShoppingEditComponent"], _shared_dropdown_directive__WEBPACK_IMPORTED_MODULE_13__["DropdownDirective"], _recipes_recipe_start_recipe_start_component__WEBPACK_IMPORTED_MODULE_16__["RecipeStartComponent"], _recipes_recipe_edit_recipe_edit_component__WEBPACK_IMPORTED_MODULE_17__["RecipeEditComponent"], _auth_signup_signup_component__WEBPACK_IMPORTED_MODULE_20__["SignupComponent"], _auth_signin_signin_component__WEBPACK_IMPORTED_MODULE_21__["SigninComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_15__["AppRoutingModule"]],
-      providers: [_shopping_list_shopping_list_service__WEBPACK_IMPORTED_MODULE_14__["ShoppingListServise"], _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_18__["RecipeService"]],
+      providers: [_shopping_list_shopping_list_service__WEBPACK_IMPORTED_MODULE_14__["ShoppingListServise"], _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_18__["RecipeService"], _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_19__["DataStorageService"], _auth_auth_service__WEBPACK_IMPORTED_MODULE_22__["AuthService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_23__["AuthGuard"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })], AppModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/auth/auth-guard.service.ts":
+  /*!********************************************!*\
+    !*** ./src/app/auth/auth-guard.service.ts ***!
+    \********************************************/
+
+  /*! exports provided: AuthGuard */
+
+  /***/
+  function srcAppAuthAuthGuardServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AuthGuard", function () {
+      return AuthGuard;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./auth.service */
+    "./src/app/auth/auth.service.ts");
+
+    var AuthGuard =
+    /*#__PURE__*/
+    function () {
+      function AuthGuard(authService) {
+        _classCallCheck(this, AuthGuard);
+
+        this.authService = authService;
+      }
+
+      _createClass(AuthGuard, [{
+        key: "canActivate",
+        value: function canActivate(route, state) {
+          return this.authService.isAuthentificated();
+        }
+      }]);
+
+      return AuthGuard;
+    }();
+
+    AuthGuard.ctorParameters = function () {
+      return [{
+        type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+      }];
+    };
+
+    AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], AuthGuard);
+    /***/
+  },
+
+  /***/
+  "./src/app/auth/auth.service.ts":
+  /*!**************************************!*\
+    !*** ./src/app/auth/auth.service.ts ***!
+    \**************************************/
+
+  /*! exports provided: AuthService */
+
+  /***/
+  function srcAppAuthAuthServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AuthService", function () {
+      return AuthService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! firebase */
+    "./node_modules/firebase/dist/index.cjs.js");
+    /* harmony import */
+
+
+    var firebase__WEBPACK_IMPORTED_MODULE_3___default =
+    /*#__PURE__*/
+    __webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_3__);
+
+    var AuthService =
+    /*#__PURE__*/
+    function () {
+      function AuthService(router) {
+        _classCallCheck(this, AuthService);
+
+        this.router = router;
+      }
+
+      _createClass(AuthService, [{
+        key: "signupUser",
+        value: function signupUser(email, password) {
+          firebase__WEBPACK_IMPORTED_MODULE_3__["auth"]().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            return console.log(error);
+          });
+        }
+      }, {
+        key: "signinUser",
+        value: function signinUser(email, password) {
+          var _this = this;
+
+          firebase__WEBPACK_IMPORTED_MODULE_3__["auth"]().signInWithEmailAndPassword(email, password).then(function (response) {
+            _this.router.navigate(['/']);
+
+            firebase__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser.getIdToken().then(function (token) {
+              return _this.token = token;
+            });
+          }).catch(function (error) {
+            return console.log(error);
+          });
+        }
+      }, {
+        key: "logout",
+        value: function logout() {
+          firebase__WEBPACK_IMPORTED_MODULE_3__["auth"]().signOut();
+          this.token = null;
+        }
+      }, {
+        key: "getToken",
+        value: function getToken() {
+          var _this2 = this;
+
+          firebase__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser.getIdToken().then(function (token) {
+            return _this2.token = token;
+          });
+          return this.token;
+        }
+      }, {
+        key: "isAuthentificated",
+        value: function isAuthentificated() {
+          return this.token != null;
+        }
+      }]);
+
+      return AuthService;
+    }();
+
+    AuthService.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }];
+    };
+
+    AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], AuthService);
+    /***/
+  },
+
+  /***/
+  "./src/app/auth/signin/signin.component.scss":
+  /*!***************************************************!*\
+    !*** ./src/app/auth/signin/signin.component.scss ***!
+    \***************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppAuthSigninSigninComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dGgvc2lnbmluL3NpZ25pbi5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/auth/signin/signin.component.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/auth/signin/signin.component.ts ***!
+    \*************************************************/
+
+  /*! exports provided: SigninComponent */
+
+  /***/
+  function srcAppAuthSigninSigninComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SigninComponent", function () {
+      return SigninComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../auth.service */
+    "./src/app/auth/auth.service.ts");
+
+    var SigninComponent =
+    /*#__PURE__*/
+    function () {
+      function SigninComponent(authService) {
+        _classCallCheck(this, SigninComponent);
+
+        this.authService = authService;
+      }
+
+      _createClass(SigninComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "onSignin",
+        value: function onSignin(form) {
+          var email = form.value.email;
+          var password = form.value.password;
+          this.authService.signinUser(email, password);
+        }
+      }]);
+
+      return SigninComponent;
+    }();
+
+    SigninComponent.ctorParameters = function () {
+      return [{
+        type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+      }];
+    };
+
+    SigninComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-signin',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./signin.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/signin/signin.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./signin.component.scss */
+      "./src/app/auth/signin/signin.component.scss")).default]
+    })], SigninComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/auth/signup/signup.component.scss":
+  /*!***************************************************!*\
+    !*** ./src/app/auth/signup/signup.component.scss ***!
+    \***************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppAuthSignupSignupComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dGgvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/auth/signup/signup.component.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/auth/signup/signup.component.ts ***!
+    \*************************************************/
+
+  /*! exports provided: SignupComponent */
+
+  /***/
+  function srcAppAuthSignupSignupComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SignupComponent", function () {
+      return SignupComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../auth.service */
+    "./src/app/auth/auth.service.ts");
+
+    var SignupComponent =
+    /*#__PURE__*/
+    function () {
+      function SignupComponent(authService) {
+        _classCallCheck(this, SignupComponent);
+
+        this.authService = authService;
+      }
+
+      _createClass(SignupComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "onSignup",
+        value: function onSignup(form) {
+          var email = form.value.email;
+          var password = form.value.password;
+          this.authService.signupUser(email, password);
+        }
+      }]);
+
+      return SignupComponent;
+    }();
+
+    SignupComponent.ctorParameters = function () {
+      return [{
+        type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+      }];
+    };
+
+    SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-signup',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./signup.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/signup/signup.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./signup.component.scss */
+      "./src/app/auth/signup/signup.component.scss")).default]
+    })], SignupComponent);
     /***/
   },
 
@@ -1186,9 +1686,57 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
 
-    var HeaderComponent = function HeaderComponent() {
-      _classCallCheck(this, HeaderComponent);
+
+    var _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../shared/data-storage.service */
+    "./src/app/shared/data-storage.service.ts");
+    /* harmony import */
+
+
+    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../auth/auth.service */
+    "./src/app/auth/auth.service.ts");
+
+    var HeaderComponent =
+    /*#__PURE__*/
+    function () {
+      function HeaderComponent(dataStorageService, authService) {
+        _classCallCheck(this, HeaderComponent);
+
+        this.dataStorageService = dataStorageService;
+        this.authService = authService;
+      }
+
+      _createClass(HeaderComponent, [{
+        key: "onSaveData",
+        value: function onSaveData() {
+          this.dataStorageService.storeRecipes().subscribe(function (response) {
+            console.log(response);
+          });
+        }
+      }, {
+        key: "onFetchData",
+        value: function onFetchData() {
+          this.dataStorageService.getRecipes();
+        }
+      }, {
+        key: "onLogout",
+        value: function onLogout() {
+          this.authService.logout();
+        }
+      }]);
+
+      return HeaderComponent;
+    }();
+
+    HeaderComponent.ctorParameters = function () {
+      return [{
+        type: _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_2__["DataStorageService"]
+      }, {
+        type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
+      }];
     };
 
     HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1281,11 +1829,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RecipeDetailComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this3 = this;
 
           this.route.params.subscribe(function (params) {
-            _this.id = +params['id'];
-            _this.recipe = _this.recipeService.getRecipe(_this.id);
+            _this3.id = +params['id'];
+            _this3.recipe = _this3.recipeService.getRecipe(_this3.id);
           });
         }
       }, {
@@ -1418,13 +1966,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RecipeEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this2 = this;
+          var _this4 = this;
 
           this.route.params.subscribe(function (params) {
-            _this2.id = +params['id'];
-            _this2.editMode = params['id'] != null;
+            _this4.id = +params['id'];
+            _this4.editMode = params['id'] != null;
 
-            _this2.initForm();
+            _this4.initForm();
           });
         }
       }, {
@@ -1701,10 +2249,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RecipeListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this5 = this;
 
           this.subscription = this.recipeService.recipesChanged.subscribe(function (recipes) {
-            _this3.recipes = recipes;
+            _this5.recipes = recipes;
           });
           this.recipes = this.recipeService.getRecipes();
         }
@@ -1932,6 +2480,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       _createClass(RecipeService, [{
+        key: "setRecipes",
+        value: function setRecipes(recipes) {
+          this.recipes = recipes;
+          this.recipesChanged.next(this.recipes.slice());
+        }
+      }, {
         key: "getRecipes",
         value: function getRecipes() {
           return this.recipes.slice();
@@ -2055,6 +2609,138 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./recipes.component.scss */
       "./src/app/recipes/recipes.component.scss")).default]
     })], RecipesComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/data-storage.service.ts":
+  /*!************************************************!*\
+    !*** ./src/app/shared/data-storage.service.ts ***!
+    \************************************************/
+
+  /*! exports provided: DataStorageService */
+
+  /***/
+  function srcAppSharedDataStorageServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DataStorageService", function () {
+      return DataStorageService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/http */
+    "./node_modules/@angular/http/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/add/operator/map */
+    "./node_modules/rxjs-compat/_esm2015/add/operator/map.js");
+    /* harmony import */
+
+
+    var _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../recipes/recipe.service */
+    "./src/app/recipes/recipe.service.ts");
+    /* harmony import */
+
+
+    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../auth/auth.service */
+    "./src/app/auth/auth.service.ts");
+
+    var DataStorageService =
+    /*#__PURE__*/
+    function () {
+      function DataStorageService(http, recipesServise, authService) {
+        _classCallCheck(this, DataStorageService);
+
+        this.http = http;
+        this.recipesServise = recipesServise;
+        this.authService = authService;
+      }
+
+      _createClass(DataStorageService, [{
+        key: "storeRecipes",
+        value: function storeRecipes() {
+          var token = this.authService.getToken();
+          return this.http.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token, this.recipesServise.getRecipes());
+        }
+      }, {
+        key: "getRecipes",
+        value: function getRecipes() {
+          var _this6 = this;
+
+          var token = this.authService.getToken();
+          return this.http.get('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token).map(function (response) {
+            var recipes = response.json();
+            var _iteratorNormalCompletion2 = true;
+            var _didIteratorError2 = false;
+            var _iteratorError2 = undefined;
+
+            try {
+              for (var _iterator2 = recipes[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var recipe = _step2.value;
+
+                if (!recipe['ingredients']) {
+                  recipe['ingredients'] = [];
+                }
+              }
+            } catch (err) {
+              _didIteratorError2 = true;
+              _iteratorError2 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+                  _iterator2.return();
+                }
+              } finally {
+                if (_didIteratorError2) {
+                  throw _iteratorError2;
+                }
+              }
+            }
+
+            return recipes;
+          }).subscribe(function (recipes) {
+            _this6.recipesServise.setRecipes(recipes);
+          });
+        }
+      }]);
+
+      return DataStorageService;
+    }();
+
+    DataStorageService.ctorParameters = function () {
+      return [{
+        type: _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]
+      }, {
+        type: _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_4__["RecipeService"]
+      }, {
+        type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
+      }];
+    };
+
+    DataStorageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], DataStorageService);
     /***/
   },
 
@@ -2230,16 +2916,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ShoppingEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this4 = this;
+          var _this7 = this;
 
           this.subscription = this.slServise.startedEditing.subscribe(function (index) {
-            _this4.editedItemIndex = index;
-            _this4.editMode = true;
-            _this4.editedItem = _this4.slServise.getIngredient(index);
+            _this7.editedItemIndex = index;
+            _this7.editMode = true;
+            _this7.editedItem = _this7.slServise.getIngredient(index);
 
-            _this4.slForm.setValue({
-              name: _this4.editedItem.name,
-              amount: _this4.editedItem.amount
+            _this7.slForm.setValue({
+              name: _this7.editedItem.name,
+              amount: _this7.editedItem.amount
             });
           });
         }
@@ -2371,11 +3057,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ShoppingListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this8 = this;
 
           this.ingredients = this.slServise.getIngredients();
           this.subscription = this.slServise.ingredientsChanged.subscribe(function (ingredients) {
-            _this5.ingredients = ingredients;
+            _this8.ingredients = ingredients;
           });
         }
       }, {
