@@ -1499,67 +1499,93 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _header_header_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _header_header_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./header/header.component */
     "./src/app/core/header/header.component.ts");
     /* harmony import */
 
 
-    var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./home/home.component */
     "./src/app/core/home/home.component.ts");
     /* harmony import */
 
 
-    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../shared/shared.module */
     "./src/app/shared/shared.module.ts");
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _auth_auth_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _auth_auth_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../auth/auth-routing.module */
     "./src/app/auth/auth-routing.module.ts");
     /* harmony import */
 
 
-    var _shopping_list_shopping_list_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _shopping_list_shopping_list_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../shopping-list/shopping-list.service */
     "./src/app/shopping-list/shopping-list.service.ts");
     /* harmony import */
 
 
-    var _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ../recipes/recipe.service */
     "./src/app/recipes/recipe.service.ts");
     /* harmony import */
 
 
-    var _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ../shared/data-storage.service */
     "./src/app/shared/data-storage.service.ts");
     /* harmony import */
 
 
-    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ../auth/auth.service */
     "./src/app/auth/auth.service.ts");
+    /* harmony import */
+
+
+    var _shared_auth_interceptor__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ../shared/auth.interceptor */
+    "./src/app/shared/auth.interceptor.ts");
+    /* harmony import */
+
+
+    var _shared_logging_interceptor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ../shared/logging.interceptor */
+    "./src/app/shared/logging.interceptor.ts");
 
     var CoreModule = function CoreModule() {
       _classCallCheck(this, CoreModule);
     };
 
     CoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]],
-      imports: [_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]],
-      exports: [_auth_auth_routing_module__WEBPACK_IMPORTED_MODULE_6__["AuthRoutingModule"], _header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"]],
-      providers: [_shopping_list_shopping_list_service__WEBPACK_IMPORTED_MODULE_7__["ShoppingListServise"], _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_8__["RecipeService"], _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_9__["DataStorageService"], _auth_auth_service__WEBPACK_IMPORTED_MODULE_10__["AuthService"]]
+      declarations: [_header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"]],
+      imports: [_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"]],
+      exports: [_auth_auth_routing_module__WEBPACK_IMPORTED_MODULE_7__["AuthRoutingModule"], _header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"]],
+      providers: [_shopping_list_shopping_list_service__WEBPACK_IMPORTED_MODULE_8__["ShoppingListServise"], _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_9__["RecipeService"], _shared_data_storage_service__WEBPACK_IMPORTED_MODULE_10__["DataStorageService"], _auth_auth_service__WEBPACK_IMPORTED_MODULE_11__["AuthService"], {
+        provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"],
+        useClass: _shared_auth_interceptor__WEBPACK_IMPORTED_MODULE_12__["AuthInterceptor"],
+        multi: true
+      }, {
+        provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"],
+        useClass: _shared_logging_interceptor__WEBPACK_IMPORTED_MODULE_13__["LoggingInterceptor"],
+        multi: true
+      }]
     })], CoreModule);
     /***/
   },
@@ -1626,7 +1652,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../auth/auth.service */
-    "./src/app/auth/auth.service.ts");
+    "./src/app/auth/auth.service.ts"); // import { HttpEvent, HttpEventType } from '@angular/common/http';
+
 
     var HeaderComponent =
     /*#__PURE__*/
@@ -1919,6 +1946,78 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/shared/auth.interceptor.ts":
+  /*!********************************************!*\
+    !*** ./src/app/shared/auth.interceptor.ts ***!
+    \********************************************/
+
+  /*! exports provided: AuthInterceptor */
+
+  /***/
+  function srcAppSharedAuthInterceptorTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AuthInterceptor", function () {
+      return AuthInterceptor;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../auth/auth.service */
+    "./src/app/auth/auth.service.ts");
+
+    var AuthInterceptor =
+    /*#__PURE__*/
+    function () {
+      function AuthInterceptor(authService) {
+        _classCallCheck(this, AuthInterceptor);
+
+        this.authService = authService;
+      }
+
+      _createClass(AuthInterceptor, [{
+        key: "intercept",
+        value: function intercept(req, next) {
+          console.log('Intercepted', req); // const copiedReq = req.clone({headers: req.headers.append('', '')});
+
+          var copiedReq = req.clone({
+            params: req.params.append('auth', this.authService.getToken())
+          });
+          return next.handle(copiedReq); // return null;
+        }
+      }]);
+
+      return AuthInterceptor;
+    }();
+
+    AuthInterceptor.ctorParameters = function () {
+      return [{
+        type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+      }];
+    };
+
+    AuthInterceptor = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], AuthInterceptor);
+    /***/
+  },
+
+  /***/
   "./src/app/shared/data-storage.service.ts":
   /*!************************************************!*\
     !*** ./src/app/shared/data-storage.service.ts ***!
@@ -1988,16 +2087,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DataStorageService, [{
         key: "storeRecipes",
         value: function storeRecipes() {
-          var token = this.authService.getToken();
-          return this.httpClient.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token, this.recipesServise.getRecipes());
+          // const headers = new HttpHeaders().set('Authorization', 'Bearer afdjdsfjd');
+          // return this.httpClient.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json', this.recipesServise.getRecipes(), {
+          //   observe: 'body',
+          //   params: new HttpParams().set('auth', token)
+          //   // headers: headers
+          // });
+          var req = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpRequest"]('PUT', 'https://ng-recipe-book-84c52.firebaseio.com/recipes.json', this.recipesServise.getRecipes(), {
+            reportProgress: true
+          });
+          return this.httpClient.request(req);
         }
       }, {
         key: "getRecipes",
         value: function getRecipes() {
           var _this3 = this;
 
-          var token = this.authService.getToken();
-          return this.httpClient.get('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token).map(function (recipes) {
+          // return this.httpClient.get<Recipe[]>('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token)
+          return this.httpClient.get('https://ng-recipe-book-84c52.firebaseio.com/recipes.json', {
+            observe: 'body',
+            responseType: 'json'
+          }).map(function (recipes) {
+            console.log(recipes);
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
             var _iteratorError = undefined;
@@ -2140,6 +2251,60 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.name = name;
       this.amount = amount;
     };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/shared/logging.interceptor.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/shared/logging.interceptor.ts ***!
+    \***********************************************/
+
+  /*! exports provided: LoggingInterceptor */
+
+  /***/
+  function srcAppSharedLoggingInterceptorTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LoggingInterceptor", function () {
+      return LoggingInterceptor;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var rxjs_add_operator_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! rxjs/add/operator/do */
+    "./node_modules/rxjs-compat/_esm2015/add/operator/do.js");
+
+    var LoggingInterceptor =
+    /*#__PURE__*/
+    function () {
+      function LoggingInterceptor() {
+        _classCallCheck(this, LoggingInterceptor);
+      }
+
+      _createClass(LoggingInterceptor, [{
+        key: "intercept",
+        value: function intercept(req, next) {
+          return next.handle(req).do(function (event) {
+            console.log('Logging Interceptor', event);
+          });
+        }
+      }]);
+
+      return LoggingInterceptor;
+    }();
     /***/
 
   },
