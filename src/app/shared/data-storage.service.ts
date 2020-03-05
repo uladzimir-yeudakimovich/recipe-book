@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 import { RecipeService } from '../recipes/recipe.service';
@@ -16,9 +16,10 @@ export class DataStorageService {
     const token = this.authService.getToken();
     // const headers = new HttpHeaders().set('Authorization', 'Bearer afdjdsfjd');
     
-    return this.httpClient.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token, this.recipesServise.getRecipes(), {
+    return this.httpClient.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json', this.recipesServise.getRecipes(), {
       observe: 'body',
-      headers: headers
+      params: new HttpParams().set('auth', token)
+      // headers: headers
     });
   }
 
