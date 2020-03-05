@@ -816,7 +816,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes)],
+      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes, {
+        preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__["PreloadAllModules"]
+      })],
       exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })], AppRoutingModule);
     /***/
@@ -952,15 +954,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
-    var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/http */
-    "./node_modules/@angular/http/fesm2015/http.js");
+    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -1002,9 +1004,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, AppModule);
     };
 
-    AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+    AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _shopping_list_shopping_list_module__WEBPACK_IMPORTED_MODULE_7__["ShoppindListModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"], _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _shopping_list_shopping_list_module__WEBPACK_IMPORTED_MODULE_7__["ShoppindListModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"], _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })], AppModule);
     /***/
@@ -1950,9 +1952,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/http */
-    "./node_modules/@angular/http/fesm2015/http.js");
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
@@ -1975,10 +1977,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DataStorageService =
     /*#__PURE__*/
     function () {
-      function DataStorageService(http, recipesServise, authService) {
+      function DataStorageService(httpClient, recipesServise, authService) {
         _classCallCheck(this, DataStorageService);
 
-        this.http = http;
+        this.httpClient = httpClient;
         this.recipesServise = recipesServise;
         this.authService = authService;
       }
@@ -1987,7 +1989,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "storeRecipes",
         value: function storeRecipes() {
           var token = this.authService.getToken();
-          return this.http.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token, this.recipesServise.getRecipes());
+          return this.httpClient.put('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token, this.recipesServise.getRecipes());
         }
       }, {
         key: "getRecipes",
@@ -1995,8 +1997,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this3 = this;
 
           var token = this.authService.getToken();
-          return this.http.get('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token).map(function (response) {
-            var recipes = response.json();
+          return this.httpClient.get('https://ng-recipe-book-84c52.firebaseio.com/recipes.json?auth=' + token).map(function (recipes) {
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
             var _iteratorError = undefined;
@@ -2036,7 +2037,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     DataStorageService.ctorParameters = function () {
       return [{
-        type: _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
       }, {
         type: _recipes_recipe_service__WEBPACK_IMPORTED_MODULE_4__["RecipeService"]
       }, {
