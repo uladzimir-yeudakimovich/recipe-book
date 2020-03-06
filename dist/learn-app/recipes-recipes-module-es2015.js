@@ -90,20 +90,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.service */ "./src/app/auth/auth.service.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
 
 
 
 let AuthGuard = class AuthGuard {
-    constructor(authService) {
-        this.authService = authService;
+    constructor(store) {
+        this.store = store;
     }
     canActivate(route, state) {
-        return this.authService.isAuthentificated();
+        return this.store.select('auth').map((authState) => {
+            return authState.authenticated;
+        });
     }
 };
 AuthGuard.ctorParameters = () => [
-    { type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
 ];
 AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
@@ -139,16 +141,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _recipe_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../recipe.service */ "./src/app/recipes/recipe.service.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _recipe_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../recipe.service */ "./src/app/recipes/recipe.service.ts");
+/* harmony import */ var _shopping_list_store_shopping_list_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shopping-list/store/shopping-list.actions */ "./src/app/shopping-list/store/shopping-list.actions.ts");
+
+
 
 
 
 
 let RecipeDetailComponent = class RecipeDetailComponent {
-    constructor(recipeService, route, router) {
+    constructor(recipeService, route, router, store) {
         this.recipeService = recipeService;
         this.route = route;
         this.router = router;
+        this.store = store;
     }
     ngOnInit() {
         this.route.params
@@ -158,7 +165,7 @@ let RecipeDetailComponent = class RecipeDetailComponent {
         });
     }
     onAddToShoppingList() {
-        this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+        this.store.dispatch(new _shopping_list_store_shopping_list_actions__WEBPACK_IMPORTED_MODULE_5__["AddIngredients"](this.recipe.ingredients));
     }
     onEditRecipe() {
         this.router.navigate(['edit'], { relativeTo: this.route });
@@ -170,9 +177,10 @@ let RecipeDetailComponent = class RecipeDetailComponent {
     }
 };
 RecipeDetailComponent.ctorParameters = () => [
-    { type: _recipe_service__WEBPACK_IMPORTED_MODULE_3__["RecipeService"] },
+    { type: _recipe_service__WEBPACK_IMPORTED_MODULE_4__["RecipeService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"] }
 ];
 RecipeDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

@@ -159,23 +159,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./auth.service */
-    "./src/app/auth/auth.service.ts");
+    var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @ngrx/store */
+    "./node_modules/@ngrx/store/fesm2015/store.js");
 
     var AuthGuard =
     /*#__PURE__*/
     function () {
-      function AuthGuard(authService) {
+      function AuthGuard(store) {
         _classCallCheck(this, AuthGuard);
 
-        this.authService = authService;
+        this.store = store;
       }
 
       _createClass(AuthGuard, [{
         key: "canActivate",
         value: function canActivate(route, state) {
-          return this.authService.isAuthentificated();
+          return this.store.select('auth').map(function (authState) {
+            return authState.authenticated;
+          });
         }
       }]);
 
@@ -184,7 +186,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     AuthGuard.ctorParameters = function () {
       return [{
-        type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+        type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]
       }];
     };
 
@@ -252,19 +254,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _recipe_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @ngrx/store */
+    "./node_modules/@ngrx/store/fesm2015/store.js");
+    /* harmony import */
+
+
+    var _recipe_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../recipe.service */
     "./src/app/recipes/recipe.service.ts");
+    /* harmony import */
+
+
+    var _shopping_list_store_shopping_list_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../shopping-list/store/shopping-list.actions */
+    "./src/app/shopping-list/store/shopping-list.actions.ts");
 
     var RecipeDetailComponent =
     /*#__PURE__*/
     function () {
-      function RecipeDetailComponent(recipeService, route, router) {
+      function RecipeDetailComponent(recipeService, route, router, store) {
         _classCallCheck(this, RecipeDetailComponent);
 
         this.recipeService = recipeService;
         this.route = route;
         this.router = router;
+        this.store = store;
       }
 
       _createClass(RecipeDetailComponent, [{
@@ -280,7 +295,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onAddToShoppingList",
         value: function onAddToShoppingList() {
-          this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+          this.store.dispatch(new _shopping_list_store_shopping_list_actions__WEBPACK_IMPORTED_MODULE_5__["AddIngredients"](this.recipe.ingredients));
         }
       }, {
         key: "onEditRecipe",
@@ -302,11 +317,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     RecipeDetailComponent.ctorParameters = function () {
       return [{
-        type: _recipe_service__WEBPACK_IMPORTED_MODULE_3__["RecipeService"]
+        type: _recipe_service__WEBPACK_IMPORTED_MODULE_4__["RecipeService"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
+        type: _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]
       }];
     };
 
