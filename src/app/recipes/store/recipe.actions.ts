@@ -1,7 +1,6 @@
 import { Action } from '@ngrx/store';
 
 import { Recipe } from '../recipe.model';
-import { type } from 'os';
 
 export const SET_RECIPES = 'SET_RECIPES';
 export const ADD_RECIPES = 'ADD_RECIPES';
