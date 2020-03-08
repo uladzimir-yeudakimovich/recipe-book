@@ -35,7 +35,6 @@ export class RecipeEditComponent implements OnInit {
 
   onSubmit() {
     if (this.editMode) {
-      this.recipeService.updataRecipe(this.id, this.recipeForm.value);
       this.store.dispatch(new RecipeActions.UpdateRecipes({
         index: this.id,
         updatedRecipe: this.recipeForm.value
