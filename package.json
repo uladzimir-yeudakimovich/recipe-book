@@ -27,7 +27,6 @@
     "bootstrap": "^3.4.1",
     "firebase": "^7.9.3",
     "rxjs": "~6.4.0",
-    "rxjs-compat": "^6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
