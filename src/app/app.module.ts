@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { GlobalErrorHandler } from './global-error-handler';
 
 import { AuthEffects } from './auth/store/auth.effects';
 
@@ -34,6 +35,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     StoreRouterConnectingModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
+  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
