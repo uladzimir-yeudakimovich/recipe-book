@@ -1,6 +1,6 @@
 # <a href="https://uladzimir-yeudakimovich.github.io/learn-app/">AppLearn</a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -28,3 +28,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Data
+Would you change your mind, the following command will disable this feature entirely `ng analytics project off`.
