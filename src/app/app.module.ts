@@ -23,7 +23,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'learn-app'}),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     SharedModule,

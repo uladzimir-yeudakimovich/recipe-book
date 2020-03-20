@@ -295,6 +295,9 @@ MIT
 @ngrx/store
 MIT
 
+@ngrx/store-devtools
+MIT
+
 bootstrap
 MIT
 The MIT License (MIT)
@@ -650,7 +653,7 @@ zone.js
 MIT
 The MIT License
 
-Copyright (c) 2016-2018 Google, Inc.
+Copyright (c) 2010-2020 Google LLC. http://angular.io/license
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

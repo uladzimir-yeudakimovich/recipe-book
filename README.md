@@ -11,11 +11,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build client
 Run `npm run build` to build the client of project. The build artifacts will be stored in the `dist/browser` directory.
 
-## Build server
-Run `ng run learn-app:server` to build the server of project. The build artifacts will be stored in the `dist/server` directory.
-
-## Build server.js
-Run `npm run webpack:server` to build the server.js will be stored in the `dist/` directory.
+## Build server and browser
+Run `build:ssr` to build the server of project. The build artifacts will be stored in the `dist/` directory.
 
 ## Start server
 Run `npm run serve:ssr` for a node server. Navigate to `http://localhost:4000/`.
