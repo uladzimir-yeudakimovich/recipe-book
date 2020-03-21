@@ -8,9 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ssr": "ng build --prod ng run learn-app:server:production",
-    "serve:ssr": "node dist/learn-app/server/main.js",
     "dev:ssr": "ng run learn-app:serve-ssr",
+    "serve:ssr": "node dist/learn-app/server/main.js",
+    "build:ssr": "ng build --prod && ng run learn-app:server:production",
     "prerender": "ng run learn-app:prerender"
   },
   "private": true,
