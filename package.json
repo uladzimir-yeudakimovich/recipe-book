@@ -1,17 +1,17 @@
 {
-  "name": "learn-app",
-  "version": "1.0.0",
+  "name": "recipe-book",
+  "version": "2.1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --aot --base-href https://uladzimir-yeudakimovich.github.io/learn-app/",
+    "build": "ng build --prod --aot --base-href https://uladzimir-yeudakimovich.github.io/recipe-book/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run learn-app:serve-ssr",
-    "serve:ssr": "node dist/learn-app/server/main.js",
-    "build:ssr": "ng build --prod && ng run learn-app:server:production",
-    "prerender": "ng run learn-app:prerender"
+    "dev:ssr": "ng run recipe-book:serve-ssr",
+    "serve:ssr": "node dist/recipe-book/server/main.js",
+    "build:ssr": "ng build --prod --base-href https://uladzimir-yeudakimovich.github.io/recipe-book/ && ng run recipe-book:server:production",
+    "prerender": "ng run recipe-book:prerender"
   },
   "private": true,
   "dependencies": {

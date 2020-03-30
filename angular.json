@@ -2,7 +2,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "learn-app": {
+    "recipe-book": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/learn-app/browser",
+            "outputPath": "dist/recipe-book/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "learn-app:build"
+            "browserTarget": "recipe-book:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "learn-app:build:production"
+              "browserTarget": "recipe-book:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "learn-app:build"
+            "browserTarget": "recipe-book:build"
           }
         },
         "test": {
@@ -114,32 +114,32 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "learn-app:serve"
+            "devServerTarget": "recipe-book:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "learn-app:serve:production"
+              "devServerTarget": "recipe-book:serve:production"
             }
           }
         },
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "learn-app:build",
-            "serverTarget": "learn-app:server"
+            "browserTarget": "recipe-book:build",
+            "serverTarget": "recipe-book:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "learn-app:build:production",
-              "serverTarget": "learn-app:server:production"
+              "browserTarget": "recipe-book:build:production",
+              "serverTarget": "recipe-book:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "learn-app:build:production",
-            "serverTarget": "learn-app:server:production",
+            "browserTarget": "recipe-book:build:production",
+            "serverTarget": "recipe-book:server:production",
             "routes": [
               "/"
             ]
@@ -151,7 +151,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/learn-app/server",
+            "outputPath": "dist/recipe-book/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "externalDependencies": [
@@ -176,7 +176,7 @@
       }
     }
   },
-  "defaultProject": "learn-app",
+  "defaultProject": "recipe-book",
   "cli": {
     "analytics": "d3d2bf66-92d5-487b-9d75-304d4a836099"
   }
