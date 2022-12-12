@@ -32,7 +32,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
     "@types/jest": "^25.1.4",
     "bootstrap": "^3.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^7.9.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
